@@ -35,6 +35,8 @@ dechunkify <- function(i){
 }
 
 # map over the "chunks" of the data in blocks of 6 & combine into a  
-df <- data.frame(do.call("rbind",  lapply(seq(1,516,6), dechunkify)))
+df <- data.frame(do.call("rbind",  lapply(seq(1,nrow(df.raw),6), dechunkify)))
 
 write.csv(df, "cleaned_up.csv")
+
+
